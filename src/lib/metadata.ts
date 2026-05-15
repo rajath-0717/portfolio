@@ -54,9 +54,6 @@ export const defaultMetadata: Metadata = {
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },
-  icons: {
-    icon: "/favicon.ico",
-  },
   robots: {
     index: true,
     follow: true,
