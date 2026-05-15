@@ -1,5 +1,4 @@
 "use client";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Github, Linkedin, Sparkles } from "lucide-react";
@@ -8,13 +7,8 @@ import { Button } from "@/components/ui/Button";
 import { MagneticButton } from "@/components/common/MagneticButton";
 import { blurUp, fadeUp, stagger } from "@/lib/animations";
 import { Marquee } from "@/components/effects/Marquee";
+import { StarField } from "@/components/effects/StarField";
 import { ProfileAvatar } from "./ProfileAvatar";
-
-const ParticleField = dynamic(
-  () =>
-    import("@/components/effects/ParticleField").then((m) => m.ParticleField),
-  { ssr: false },
-);
 
 export function Hero() {
   return (
@@ -22,7 +16,7 @@ export function Hero() {
       id="home"
       className="relative isolate flex flex-col justify-center overflow-x-clip overflow-y-hidden px-4 sm:px-6 pt-24 pb-16 sm:pt-28 sm:pb-20 md:min-h-[100svh] md:pt-32 md:pb-20 w-full max-w-[100vw]"
     >
-      <ParticleField />
+      <StarField />
 
       <div
         aria-hidden
