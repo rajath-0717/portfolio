@@ -1,0 +1,151 @@
+import type { Project } from "@/types";
+
+export const projects: Project[] = [
+  {
+    slug: "carvault",
+    title: "CarVault",
+    subtitle: "AI-Powered Car Marketplace",
+    description:
+      "Enterprise car marketplace built across the full SDLC: requirements, design, development, testing, deployment. Gemini API drives AI vehicle attribute extraction, dramatically reducing manual data entry.",
+    category: "AI",
+    features: [
+      "Gemini-powered vehicle attribute extraction",
+      "Clerk role-based authentication",
+      "Real-time test-drive booking with conflict detection",
+      "Full admin dashboard and analytics",
+      "Deployed on Vercel",
+    ],
+    stack: [
+      "Next.js",
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "Prisma",
+      "Gemini API",
+      "Clerk",
+      "Vercel",
+    ],
+    accent: "from-violet-500 via-fuchsia-500 to-pink-500",
+    liveUrl: "#",
+    repoUrl: "https://github.com/rajath",
+  },
+  {
+    slug: "idea-to-task",
+    title: "Idea-to-Task Generator",
+    subtitle: "AI Productivity Tool",
+    description:
+      "Productivity application that analyses business ideas and converts them into structured, actionable task workflows via Gemini API. Typed TypeScript codebase with modular component architecture.",
+    category: "AI",
+    features: [
+      "Idea analysis with Gemini API",
+      "Structured task workflow generation",
+      "Modular TypeScript architecture",
+      "Clean, typed API contracts",
+    ],
+    stack: [
+      "React 18",
+      "TypeScript",
+      "TailwindCSS",
+      "Node.js",
+      "Express",
+      "Gemini API",
+    ],
+    accent: "from-blue-500 via-indigo-500 to-violet-500",
+    liveUrl: "#",
+    repoUrl: "https://github.com/rajath",
+  },
+  {
+    slug: "cinebites",
+    title: "CineBites",
+    subtitle: "Movie Theatre Café Management",
+    description:
+      "Order management, billing and inventory control system aligned with real-world café operations: low-stock alerts, daily sales reporting and clean operator workflows.",
+    category: "SaaS",
+    features: [
+      "Order & billing system",
+      "Inventory management with low-stock alerts",
+      "Daily sales reporting",
+      "Operator dashboard",
+    ],
+    stack: ["PHP", "MySQL", "TailwindCSS", "Bootstrap", "JavaScript"],
+    accent: "from-amber-500 via-orange-500 to-red-500",
+    repoUrl: "https://github.com/rajath",
+  },
+  {
+    slug: "sygma",
+    title: "Sygma",
+    subtitle: "National-Level IT Fest Platform",
+    description:
+      "Responsive event management platform handling participant registrations, session scheduling and coordinator workflows for a national-level university tech fest.",
+    category: "Web",
+    features: [
+      "Participant registration",
+      "Session scheduling",
+      "Coordinator workflows",
+      "Mobile-responsive UI",
+    ],
+    stack: ["PHP", "MySQL", "TailwindCSS", "Bootstrap", "JavaScript"],
+    accent: "from-cyan-500 via-teal-500 to-emerald-500",
+    repoUrl: "https://github.com/rajath",
+  },
+  {
+    slug: "hiring-portal",
+    title: "Hiring Portal",
+    subtitle: "Production SaaS @ MicroDegree",
+    description:
+      "5-role hiring SPA powering recruitment for MicroDegree: AI HR comments via Claude, Zoom-integrated interview prep, gated career-readiness flows, and a superadmin analytics dashboard.",
+    category: "SaaS",
+    features: [
+      "5 user roles (Student, HR, Reviewer, Ops, SuperAdmin)",
+      "Claude API HR comment suggestions",
+      "Zoom interview-prep registration",
+      "Career-readiness gating engine",
+      "Deep-link OAuth login",
+    ],
+    stack: [
+      "React",
+      "Node.js",
+      "Express",
+      "Supabase",
+      "PostgreSQL",
+      "Claude API",
+      "Zoom API",
+      "Docker",
+    ],
+    accent: "from-fuchsia-500 via-purple-500 to-indigo-500",
+    liveUrl: "#",
+  },
+  {
+    slug: "certificate-automation",
+    title: "Certificate Automation Platform",
+    subtitle: "Production SaaS @ MicroDegree",
+    description:
+      "FastAPI + React pipeline that renders personalised certificate PNGs from a Canva template, auto-emails them via Gmail SMTP and syncs status back to Google Sheets.",
+    category: "Tool",
+    features: [
+      "Pillow-rendered certificate PNGs",
+      "Auto-email via Gmail SMTP",
+      "Google Sheets status sync",
+      "Dockerised deployment on DigitalOcean",
+    ],
+    stack: [
+      "FastAPI",
+      "Python",
+      "React",
+      "Pillow",
+      "Google Sheets API",
+      "Docker",
+      "DigitalOcean",
+    ],
+    accent: "from-emerald-500 via-cyan-500 to-blue-500",
+    liveUrl: "#",
+  },
+];
+
+export const projectCategories = [
+  "All",
+  "AI",
+  "SaaS",
+  "Web",
+  "Tool",
+] as const;

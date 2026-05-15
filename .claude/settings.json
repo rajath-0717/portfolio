@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(unzip -p Rajath_Resume_2025.docx word/document.xml)",
+      "Bash(python -c \"import sys, re; xml=sys.stdin.read\\(\\); text=re.sub\\(r'<w:p[^>]*>', '\\\\n', xml\\); text=re.sub\\(r'<[^>]+>', '', text\\); print\\(text\\)\")"
+    ]
+  }
+}
