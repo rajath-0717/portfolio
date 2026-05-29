@@ -27,7 +27,7 @@ export const projects: Project[] = [
     ],
     accent: "from-violet-500 via-fuchsia-500 to-pink-500",
     liveUrl: "#",
-    repoUrl: "https://github.com/rajath-0717",
+    repoUrl: "https://github.com/rajath-0717-0717",
   },
   {
     slug: "idea-to-task",
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     ],
     accent: "from-blue-500 via-indigo-500 to-violet-500",
     liveUrl: "#",
-    repoUrl: "https://github.com/rajath-0717",
+    repoUrl: "https://github.com/rajath-0717-0717",
   },
   {
     slug: "cinebites",
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     ],
     stack: ["PHP", "MySQL", "TailwindCSS", "Bootstrap", "JavaScript"],
     accent: "from-amber-500 via-orange-500 to-red-500",
-    repoUrl: "https://github.com/rajath-0717",
+    repoUrl: "https://github.com/rajath-0717-0717",
   },
   {
     slug: "sygma",
@@ -86,7 +86,7 @@ export const projects: Project[] = [
     ],
     stack: ["PHP", "MySQL", "TailwindCSS", "Bootstrap", "JavaScript"],
     accent: "from-cyan-500 via-teal-500 to-emerald-500",
-    repoUrl: "https://github.com/rajath-0717",
+    repoUrl: "https://github.com/rajath-0717-0717",
   },
   {
     slug: "hiring-portal",

@@ -8,7 +8,7 @@ export const PROFILE = {
   phone: "+91 9606328107",
   resumeUrl: "/resume/Rajath_Resume_2025.docx",
   socials: {
-    github: "https://github.com/rajath-0717",
+    github: "https://github.com/rajath-0717-0717",
     linkedin: "https://www.linkedin.com/in/rajath",
     twitter: "https://twitter.com/rajath",
   },
