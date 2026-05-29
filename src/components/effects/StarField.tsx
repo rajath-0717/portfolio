@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface Star {
   left: number;
@@ -27,6 +27,14 @@ function genStars(count: number): Star[] {
 
 export function StarField() {
   const [reduced, setReduced] = useState(false);
+  // Generate stars only after mount. Doing this during render would call
+  // Math.random() on both the server and the client, producing mismatched
+  // inline styles and a hydration error. Server + first client render = empty.
+  const [stars, setStars] = useState<Star[]>([]);
+
+  useEffect(() => {
+    setStars(genStars(120));
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -36,8 +44,6 @@ export function StarField() {
     mq.addEventListener("change", apply);
     return () => mq.removeEventListener("change", apply);
   }, []);
-
-  const stars = useMemo(() => genStars(120), []);
 
   return (
     <div
