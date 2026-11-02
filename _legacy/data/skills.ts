@@ -31,6 +31,7 @@ export const skillGroups: SkillGroup[] = [
       { name: "REST APIs" },
       { name: "GraphQL" },
       { name: "Python" },
+      { name: "Php" },
     ],
   },
   {

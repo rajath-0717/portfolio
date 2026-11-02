@@ -1,75 +1,62 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Bricolage_Grotesque, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { defaultMetadata } from "@/lib/metadata";
-import { ThemeProvider } from "@/components/common/ThemeProvider";
-import { SmoothScrollProvider } from "@/components/common/SmoothScrollProvider";
-import { CustomCursor } from "@/components/effects/CustomCursor";
-import { ScrollProgress } from "@/components/layout/ScrollProgress";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
-import { FloatingActions } from "@/components/layout/FloatingActions";
-import { NoiseTexture } from "@/components/effects/NoiseTexture";
-import { GradientMesh } from "@/components/effects/GradientMesh";
+import { PROFILE, SEO, SITE_URL } from "@/lib/site";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 
-const sans = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-});
+const display = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-display", display: "swap" });
+const sans = DM_Sans({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
-const display = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  display: "swap",
-});
-
-export const metadata: Metadata = defaultMetadata;
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: { default: SEO.title, template: "%s | Rajath" },
+  description: SEO.description,
+  keywords: SEO.keywords,
+  applicationName: "Rajath Portfolio",
+  authors: [{ name: PROFILE.name, url: SITE_URL }],
+  creator: PROFILE.name,
+  publisher: PROFILE.name,
+  category: "technology",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: SITE_URL,
+    siteName: "Rajath | Developer Portfolio",
+    title: SEO.title,
+    description: SEO.description,
+  },
+  twitter: { card: "summary_large_image", title: SEO.title, description: SEO.description },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+  },
+  formatDetection: { telephone: false },
+};
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0f" },
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-  ],
+  themeColor: "#0C0B0A",
+  colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={`${sans.variable} ${display.variable} ${mono.variable}`}
-    >
-      <body className="min-h-screen overflow-x-clip w-full max-w-[100vw]">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
-          disableTransitionOnChange
+    <html lang="en-IN" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
+      <body>
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-lime focus:px-4 focus:py-2 focus:font-bold focus:text-ink"
         >
-          <SmoothScrollProvider>
-            <GradientMesh />
-            <NoiseTexture />
-            <CustomCursor />
-            <ScrollProgress />
-            <Navbar />
-            <main className="relative z-10 w-full max-w-full overflow-x-clip">{children}</main>
-            <Footer />
-            <FloatingActions />
-          </SmoothScrollProvider>
-        </ThemeProvider>
+          Skip to content
+        </a>
+        <Navbar />
+        <main id="main">{children}</main>
+        <Footer />
       </body>
     </html>
   );

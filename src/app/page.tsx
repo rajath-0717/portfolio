@@ -1,20 +1,22 @@
-import { Hero } from "@/components/hero/Hero";
-import { About } from "@/components/about/About";
-import { Experience } from "@/components/experience/Experience";
-import { Projects } from "@/components/projects/Projects";
-import { Skills } from "@/components/skills/Skills";
-import { Achievements } from "@/components/achievements/Achievements";
-import { Contact } from "@/components/contact/Contact";
+import { Hero } from "@/components/Hero";
+import { Marquee } from "@/components/Marquee";
+import { Work } from "@/components/Work";
+import { About, Achievements, Experience, Faq, Stack } from "@/components/Sections";
+import { Contact } from "@/components/Contact";
+import { homeGraph } from "@/lib/jsonld";
 
 export default function HomePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeGraph()) }} />
       <Hero />
+      <Marquee />
+      <Work />
       <About />
       <Experience />
-      <Projects />
-      <Skills />
+      <Stack />
       <Achievements />
+      <Faq />
       <Contact />
     </>
   );

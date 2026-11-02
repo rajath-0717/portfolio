@@ -3,174 +3,80 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 240 10% 4%;
-    --foreground: 0 0% 98%;
-    --muted: 240 5% 12%;
-    --muted-foreground: 240 4% 65%;
-    --border: 240 5% 18%;
-    --accent: 263 70% 60%;
-    --primary: 263 70% 60%;
-    --secondary: 217 91% 60%;
-  }
-
-  .light {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 4%;
-    --muted: 240 5% 95%;
-    --muted-foreground: 240 4% 35%;
-    --border: 240 5% 88%;
-    --accent: 263 70% 50%;
-    --primary: 263 70% 50%;
-    --secondary: 217 91% 50%;
-  }
-
-  * {
-    @apply border-border;
-  }
-
   html {
     scroll-behavior: smooth;
+    background: #0c0b0a;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     overflow-x: clip;
-    width: 100%;
-    max-width: 100vw;
   }
-
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-ink font-sans text-cream;
     overflow-x: clip;
-    width: 100%;
-    max-width: 100vw;
-    position: relative;
     background-image:
-      radial-gradient(at 27% 37%, hsla(263, 70%, 50%, 0.10) 0px, transparent 50%),
-      radial-gradient(at 97% 21%, hsla(217, 91%, 60%, 0.08) 0px, transparent 50%),
-      radial-gradient(at 52% 99%, hsla(290, 70%, 60%, 0.08) 0px, transparent 50%),
-      radial-gradient(at 10% 90%, hsla(180, 80%, 50%, 0.06) 0px, transparent 50%);
-    background-attachment: fixed;
+      radial-gradient(circle at 1px 1px, rgba(244, 239, 230, 0.07) 1px, transparent 0);
+    background-size: 28px 28px;
   }
-
   ::selection {
-    @apply bg-brand-violet/40 text-white;
+    @apply bg-lime text-ink;
   }
-
-  /* Custom scrollbar */
+  :focus-visible {
+    outline: 3px solid #c8ff2e;
+    outline-offset: 3px;
+  }
   ::-webkit-scrollbar {
     width: 10px;
-    height: 10px;
   }
   ::-webkit-scrollbar-track {
-    @apply bg-transparent;
+    background: #0c0b0a;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-white/10 rounded-full;
-    transition: background 0.2s;
+    background: #2a2724;
+    border: 2px solid #0c0b0a;
+    border-radius: 99px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-white/20;
+    background: #c8ff2e;
   }
 }
 
 @layer components {
-  .glass {
-    @apply bg-white/[0.03] backdrop-blur-xl border border-white/10;
+  .wrap {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
   }
-
-  .glass-strong {
-    @apply bg-white/[0.06] backdrop-blur-2xl border border-white/15;
-  }
-
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-br from-white via-white/90 to-white/60;
-  }
-
-  .text-gradient-brand {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-violet via-brand-fuchsia to-brand-cyan;
-    background-size: 200% auto;
-  }
-
-  .gradient-border {
-    position: relative;
-    isolation: isolate;
-  }
-  .gradient-border::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    padding: 1px;
-    border-radius: inherit;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.6), rgba(59, 130, 246, 0.3), rgba(6, 182, 212, 0.6));
-    -webkit-mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-            mask-composite: exclude;
-    pointer-events: none;
-  }
-
   .section {
-    @apply relative w-full py-16 sm:py-20 md:py-28 lg:py-32 px-5 sm:px-6;
+    @apply relative py-20 sm:py-28;
   }
-
-  .container-tight {
-    @apply mx-auto max-w-6xl;
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border-2 border-cream/20 px-3 py-1 font-mono text-xs text-cream-dim;
   }
-
-  .heading-xl {
-    @apply font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05];
+  .tag {
+    @apply inline-block rounded-md bg-ink-3 px-2 py-0.5 font-mono text-[11px] text-cream-dim;
   }
-  .heading-lg {
-    @apply font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border-2 border-ink px-5 py-3 font-display text-sm font-bold transition-transform duration-150;
   }
-  .heading-md {
-    @apply font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight;
+  .btn-lime {
+    @apply btn bg-lime text-ink shadow-pop-cream hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none;
   }
-
-  .grid-bg {
-    background-image:
-      linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-    background-size: 56px 56px;
-    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
-            mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  .btn-ghost {
+    @apply btn border-cream/30 bg-transparent text-cream hover:border-lime hover:text-lime;
+  }
+  .card {
+    @apply rounded-2xl border-2 border-cream/15 bg-ink-2;
+  }
+  .stroke-text {
+    -webkit-text-stroke: 2px #f4efe6;
+    color: transparent;
   }
 }
 
-@layer utilities {
-  .perspective-1000 {
-    perspective: 1000px;
-  }
-  .preserve-3d {
-    transform-style: preserve-3d;
-  }
-  .backface-hidden {
-    backface-visibility: hidden;
-  }
-
-  .mask-fade-r {
-    -webkit-mask-image: linear-gradient(to right, black 70%, transparent);
-            mask-image: linear-gradient(to right, black 70%, transparent);
-  }
-  .mask-fade-edges {
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  }
-
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Conic spinning glow used for "glow on hover" cards */
-  .conic-glow {
-    background: conic-gradient(from var(--angle, 0deg), rgba(139, 92, 246, 0.7), rgba(59, 130, 246, 0.7), rgba(217, 70, 239, 0.7), rgba(139, 92, 246, 0.7));
-    animation: border-spin 7s linear infinite;
-  }
-
-  @property --angle {
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
