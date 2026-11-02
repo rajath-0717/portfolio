@@ -56,9 +56,16 @@ function Card({ p, big }: { p: Project; big: boolean }) {
           </div>
           <h3 className="font-display text-2xl font-extrabold leading-tight tracking-tight sm:text-3xl">{p.title}</h3>
           <p className="mt-1 font-mono text-sm text-tang">{p.tagline}</p>
-          <p className="mt-4 line-clamp-3 text-[15px] leading-relaxed text-cream-dim">{p.summary}</p>
-          <div className="mt-5 flex flex-wrap gap-1.5">
-            {p.stack.slice(0, big ? 8 : 5).map((s) => (
+          <p className="mt-4 line-clamp-4 text-[15px] leading-relaxed text-cream-dim">{p.hook}</p>
+          <div className="mt-4 flex flex-wrap gap-1.5">
+            {p.facts.slice(0, 3).map((f) => (
+              <span key={f} className="rounded-md bg-lime/10 px-2 py-0.5 font-mono text-[11px] font-bold text-lime">
+                {f}
+              </span>
+            ))}
+          </div>
+          <div className="mt-3 flex flex-wrap gap-1.5">
+            {p.stack.slice(0, big ? 7 : 4).map((s) => (
               <span key={s} className="tag">
                 {s}
               </span>
@@ -112,7 +119,7 @@ export function Work() {
         </motion.div>
 
         <p className="mt-8 font-mono text-sm text-cream-mute">
-          * &quot;internal&quot; = built at MicroDegree, so no public repo. Case studies describe what I built and how.
+          * &quot;internal&quot; = built at MicroDegree, so the source is private. The case studies tell you what it solves, what it does and how I built it.
         </p>
       </div>
     </section>

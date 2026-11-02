@@ -22,7 +22,7 @@ export const personNode = {
     addressCountry: "IN",
   },
   sameAs: [PROFILE.github, PROFILE.linkedin],
-  worksFor: { "@type": "Organization", name: PROFILE.employer },
+  worksFor: { "@type": "Organization", name: PROFILE.employer, url: "https://www.microdegree.work" },
   alumniOf: { "@type": "CollegeOrUniversity", name: PROFILE.university },
   award: [
     "University Gold Medal and First Rank, MCA, Srinivas University",

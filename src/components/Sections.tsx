@@ -20,19 +20,19 @@ export function About() {
               </div>
               <div className="space-y-4 p-6 text-[17px] leading-relaxed text-cream-dim sm:p-8">
                 <p>
-                  <strong className="text-cream">Rajath</strong> is a Full Stack Developer from Mangalore, India. I finished my MCA at{" "}
-                  {PROFILE.university} with a <strong className="text-lime">University Gold Medal, First Rank and a 9.82 CGPA</strong>, and I now
-                  work at {PROFILE.employer} turning messy operational problems into software.
+                  I&apos;m <strong className="text-cream">Rajath</strong>, a Junior Software Engineer at {PROFILE.employer} and a Full Stack Developer from
+                  Mangalore. I finished my MCA at {PROFILE.university} with a{" "}
+                  <strong className="text-lime">University Gold Medal, First Rank and a 9.82 CGPA</strong>, then went straight into building software
+                  that a whole company runs on.
                 </p>
                 <p>
-                  My favourite kind of project: a team is drowning in spreadsheets, chat threads or manual uploads, and I replace the pain with a
-                  dashboard, a role-based portal or an automation with a human in the loop. Think{" "}
-                  <span className="text-cream">30+ Google Sheets → one live analytics platform</span>, or{" "}
-                  <span className="text-cream">Zoom recording → approved → on the LMS</span>.
+                  My favourite kind of problem: a team is making decisions on slow, scattered or untrusted information. I build the thing that fixes it.
+                  Lately that&apos;s a <span className="text-cream">20+ dashboard analytics platform</span> that tells a growth team exactly what&apos;s
+                  working, and a <span className="text-cream">five-role hiring platform</span> that moves students from sign-up to offer.
                 </p>
                 <p>
-                  I care about boring-but-important things too: Lighthouse scores, technical SEO, conversion tracking, role guards, and code the next
-                  person can read.
+                  I sweat the unglamorous stuff too: data you can trust, role-based security, Lighthouse scores, conversion tracking, and code the next
+                  person can actually read.
                 </p>
                 <p className="font-mono text-sm text-cream-mute">
                   <span className="text-tang">$</span> git log --oneline | head -1 <br />

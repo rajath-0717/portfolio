@@ -54,7 +54,7 @@ export function Hero() {
       <div className="wrap relative grid items-center gap-12 lg:grid-cols-[1.4fr_1fr]">
         <div>
           <p className="chip mb-6">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-lime" /> open to work · {PROFILE.location.split(",")[0]}
+            <span className="h-2 w-2 animate-pulse rounded-full bg-lime" /> junior software engineer @ {PROFILE.employer}
           </p>
 
           <h1 className="font-display text-[clamp(3.4rem,13vw,9.5rem)] font-extrabold leading-[0.82] tracking-tighter">
@@ -70,7 +70,7 @@ export function Hero() {
           </p>
 
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-cream-dim">
-            {PROFILE.tagline} Full Stack Developer &amp; Software Engineer in Mangalore, India, working with React, Next.js,
+            {PROFILE.tagline} Junior Software Engineer &amp; Full Stack Developer in Mangalore, India, shipping with React, Next.js,
             Node.js, FastAPI and the Claude &amp; Gemini APIs.
           </p>
 

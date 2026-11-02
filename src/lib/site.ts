@@ -5,8 +5,8 @@ export const SITE_URL = (
 export const PROFILE = {
   name: "Rajath",
   handle: "rajath-0717",
-  role: "Software Engineer & Full Stack Developer",
-  tagline: "I build dashboards, platforms and AI tools that real teams use every day.",
+  role: "Junior Software Engineer & Full Stack Developer",
+  tagline: "I turn messy business problems into dashboards, platforms and automations teams use every single day.",
   location: "Mangalore, Karnataka, India",
   email: "rajath.connectme@gmail.com",
   phone: "+91 9606328107",
@@ -21,11 +21,13 @@ export const PROFILE = {
 export const SEO = {
   title: "Rajath | Full Stack Developer, React, Next.js, Node.js & AI Engineer in Mangalore, India",
   description:
-    "Rajath is a Full Stack Developer and Software Engineer in Mangalore, India (MCA Gold Medalist, 9.82 CGPA). He builds React, Next.js, Node.js, FastAPI and Supabase products: data dashboards, e-learning platforms, hiring portals, landing pages and AI automations with Claude and Gemini.",
+    "Rajath is a Junior Software Engineer and Full Stack Developer in Mangalore, India (MCA Gold Medalist, 9.82 CGPA) at MicroDegree. Builds React, Next.js, Node.js, FastAPI and Supabase products: a 20+ dashboard marketing analytics platform, hiring and e-learning platforms, high-speed landing pages and AI automations with Claude and Gemini.",
   keywords: [
     "Rajath",
     "Rajath developer portfolio",
     "Full Stack Developer Mangalore",
+    "Junior Software Engineer",
+    "marketing analytics dashboard developer",
     "Full Stack Developer India",
     "Software Engineer portfolio",
     "React developer",

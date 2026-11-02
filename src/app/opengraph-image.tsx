@@ -25,7 +25,7 @@ export default function OgImage() {
           <div style={{ fontSize: 150, fontWeight: 900, lineHeight: 0.9, color: "#C8FF2E", display: "flex" }}>
             Rajath<span style={{ color: "#FF5B2E" }}>.</span>
           </div>
-          <div style={{ fontSize: 44, marginTop: 24, display: "flex" }}>Full Stack Developer & Software Engineer</div>
+          <div style={{ fontSize: 44, marginTop: 24, display: "flex" }}>Junior Software Engineer & Full Stack Developer</div>
           <div style={{ fontSize: 28, marginTop: 14, color: "#B9B2A5", display: "flex" }}>
             React · Next.js · Node.js · FastAPI · Supabase · AI
           </div>
